@@ -17,7 +17,7 @@ function ShowCase() {
   return (
     <>
       <div
-        className="min-h-[400px] md:h-[570px] w-full flex flex-col justify-center items-center backdrop-blur-md overflow-hidden relative px-4"
+        className="md:min-h-[400px] min-h-[750px] md:h-[570px] w-full flex flex-col justify-center items-center backdrop-blur-md overflow-hidden relative px-4"
         style={{
           backgroundImage: `
           linear-gradient(to bottom,
@@ -72,10 +72,10 @@ function ShowCase() {
 
           {/* Backend Power */}
           <div className="group relative bg-white/20 backdrop-blur-xl rounded-2xl shadow-2xl border border-white/30 p-4 mx-4">
-            <div className="absolute top-0 left-3 w-0.5 h-full bg-gradient-to-b from-red-400/70 via-red-300/50 to-red-200/30 rounded-full"></div>
-            <div className="absolute top-0 right-3 w-0.5 h-full bg-gradient-to-b from-red-400/70 via-red-300/50 to-red-200/30 rounded-full"></div>
-            <div className="absolute top-3 left-0 w-full h-0.5 bg-gradient-to-r from-red-400/70 via-red-300/50 to-red-200/30 rounded-full"></div>
-            <div className="absolute bottom-3 left-0 w-full h-0.5 bg-gradient-to-r from-red-400/70 via-red-300/50 to-red-200/30 rounded-full"></div>
+            <div className="absolute top-0 left-4 w-0.5 h-full bg-gradient-to-b from-red-400/70 via-red-300/50 to-red-200/30 rounded-full"></div>
+            <div className="absolute top-0 right-4 w-0.5 h-full bg-gradient-to-b from-red-400/70 via-red-300/50 to-red-200/30 rounded-full"></div>
+            <div className="absolute top-4 left-0 w-full h-0.5 bg-gradient-to-r from-red-400/70 via-red-300/50 to-red-200/30 rounded-full"></div>
+            <div className="absolute bottom-4 left-0 w-full h-0.5 bg-gradient-to-r from-red-400/70 via-red-300/50 to-red-200/30 rounded-full"></div>
 
             <div className="bg-white/60 backdrop-blur-2xl rounded-2xl p-4 shadow-xl border border-white/40">
               <div className="w-10 h-10 bg-gradient-to-br from-red-500 to-orange-600 rounded-full flex items-center justify-center mb-4 shadow-lg">
@@ -88,7 +88,7 @@ function ShowCase() {
                 </svg>
               </div>
               <h3 className="text-lg font-bold text-gray-800 mb-2">Backend Power</h3>
-              <p className="text-gray-600 text-sm leading-relaxed mb-3">
+              <p className="text-gray-600 text-sm leading-relaxed mb-4">
                 Scalable server architecture with secure APIs.
               </p>
               <div className="flex flex-wrap gap-1">
@@ -104,13 +104,13 @@ function ShowCase() {
 
           {/* AI Integration */}
           <div className="group relative bg-white/20 backdrop-blur-xl rounded-2xl shadow-2xl border border-white/30 p-4 mx-4">
-            <div className="absolute top-0 left-2 w-0.5 h-full bg-gradient-to-b from-emerald-400/70 via-emerald-300/50 to-emerald-200/30 rounded-full"></div>
-            <div className="absolute top-0 right-2 w-0.5 h-full bg-gradient-to-b from-emerald-400/70 via-emerald-300/50 to-emerald-200/30 rounded-full"></div>
-            <div className="absolute top-2 left-0 w-full h-0.5 bg-gradient-to-r from-emerald-400/70 via-emerald-300/50 to-emerald-200/30 rounded-full"></div>
-            <div className="absolute bottom-2 left-0 w-full h-0.5 bg-gradient-to-r from-emerald-400/70 via-emerald-300/50 to-emerald-200/30 rounded-full"></div>
+            <div className="absolute top-0 left-4 w-0.5 h-full bg-gradient-to-b from-emerald-400/70 via-emerald-300/50 to-emerald-200/30 rounded-full"></div>
+            <div className="absolute top-0 right-4 w-0.5 h-full bg-gradient-to-b from-emerald-400/70 via-emerald-300/50 to-emerald-200/30 rounded-full"></div>
+            <div className="absolute top-4 left-0 w-full h-0.5 bg-gradient-to-r from-emerald-400/70 via-emerald-300/50 to-emerald-200/30 rounded-full"></div>
+            <div className="absolute bottom-4 left-0 w-full h-0.5 bg-gradient-to-r from-emerald-400/70 via-emerald-300/50 to-emerald-200/30 rounded-full"></div>
 
             <div className="bg-white/60 backdrop-blur-2xl rounded-2xl p-4 shadow-xl border border-white/40">
-              <div className="w-10 h-10 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-full flex items-center justify-center mb-3 shadow-lg">
+              <div className="w-10 h-10 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-full flex items-center justify-center mb-4 shadow-lg">
                 <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
                   <path
                     fillRule="evenodd"
@@ -120,7 +120,7 @@ function ShowCase() {
                 </svg>
               </div>
               <h3 className="text-lg font-bold text-gray-800 mb-2">AI Integration</h3>
-              <p className="text-gray-600 text-sm leading-relaxed mb-3">
+              <p className="text-gray-600 text-sm leading-relaxed mb-4">
                 Smart automation with machine learning models.
               </p>
               <div className="flex flex-wrap gap-1">
@@ -319,9 +319,9 @@ function ShowCase() {
           </div>
         </div>
 
-        {/* Enhanced fade overlays */}
-        <div className="absolute left-0 bottom-0 h-32 w-48 bg-gradient-to-r from-white via-white/70 to-transparent z-40 pointer-events-none"></div>
-        <div className="absolute right-0 bottom-0 h-32 w-48 bg-gradient-to-l from-white via-white/70 to-transparent z-40 pointer-events-none"></div>
+        {/* White fade overlays - ONLY for desktop */}
+        <div className="hidden md:block absolute left-0 bottom-0 h-32 w-48 bg-gradient-to-r from-white via-white/70 to-transparent z-40 pointer-events-none"></div>
+        <div className="hidden md:block absolute right-0 bottom-0 h-32 w-48 bg-gradient-to-l from-white via-white/70 to-transparent z-40 pointer-events-none"></div>
 
         {/* Enhanced ambient bottom glow */}
         <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-[600px] h-32 bg-gradient-to-t from-purple-200/30 via-purple-100/20 to-transparent rounded-full blur-3xl pointer-events-none"></div>

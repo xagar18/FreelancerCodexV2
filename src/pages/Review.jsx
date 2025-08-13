@@ -86,7 +86,7 @@ function Review() {
     return [...Array(5)].map((_, index) => (
       <svg
         key={index}
-        className={`w-4 h-4 ${index < rating ? 'text-yellow-400' : 'text-gray-300'}`}
+        className={`w-3 h-3 sm:w-4 sm:h-4 ${index < rating ? 'text-yellow-400' : 'text-gray-300'}`}
         fill="currentColor"
         viewBox="0 0 20 20"
       >
@@ -98,48 +98,50 @@ function Review() {
   return (
     <div
       id="reviews"
-      className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-gray-100 py-8 px-4"
+      className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-gray-100 py-6 px-3 sm:py-8 sm:px-4 lg:py-12 lg:px-6"
     >
       <div className="max-w-6xl mx-auto">
         {/* Header Section */}
-        <div className="text-center mb-8">
-          <h1 className="text-4xl font-extrabold text-gray-900 mb-3 tracking-tight">
+        <div className="text-center mb-6 sm:mb-8 lg:mb-12">
+          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-gray-900 mb-2 sm:mb-3 tracking-tight">
             Client{' '}
             <span className="bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent">
               Reviews
             </span>
           </h1>
-          <p className="text-base text-gray-600 max-w-xl mx-auto leading-relaxed">
+          <p className="text-sm sm:text-base text-gray-600 max-w-lg lg:max-w-xl mx-auto leading-relaxed px-2 sm:px-0">
             Discover what our clients say about their experience working with us.
           </p>
         </div>
 
         {/* Reviews Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 lg:gap-6 mb-6 sm:mb-8 lg:mb-12">
           {reviews.map(review => (
             <div
               key={review.id}
-              className="bg-white rounded-xl p-5 shadow-md border border-gray-100"
+              className="bg-white rounded-lg sm:rounded-xl p-4 sm:p-5 lg:p-6 shadow-md border border-gray-100 hover:shadow-lg transition-shadow duration-300"
             >
               {/* Header */}
-              <div className="flex items-center mb-3">
+              <div className="flex items-center mb-3 sm:mb-4">
                 {/* <img
                   src={review.avatar}
                   alt={review.name}
-                  className="w-10 h-10 rounded-full object-cover mr-3 ring-2 ring-gray-100"
+                  className="w-8 h-8 sm:w-10 sm:h-10 rounded-full object-cover mr-2 sm:mr-3 ring-2 ring-gray-100"
                 /> */}
-                <div className="flex-1">
-                  <h3 className="font-semibold text-gray-900 text-sm">{review.name}</h3>
-                  <p className="text-gray-500 text-xs">
+                <div className="flex-1 min-w-0">
+                  <h3 className="font-semibold text-gray-900 text-sm sm:text-base truncate">
+                    {review.name}
+                  </h3>
+                  <p className="text-gray-500 text-xs sm:text-sm truncate">
                     {review.role} at {review.company}
                   </p>
                 </div>
               </div>
 
               {/* Rating and Date */}
-              <div className="flex items-center justify-between mb-3">
-                <div className="flex items-center">{renderStars(review.rating)}</div>
-                <span className="text-gray-400 text-xs">
+              <div className="flex items-center justify-between mb-3 sm:mb-4">
+                <div className="flex items-center gap-0.5">{renderStars(review.rating)}</div>
+                <span className="text-gray-400 text-xs sm:text-sm">
                   {new Date(review.date).toLocaleDateString('en-US', {
                     month: 'short',
                     day: 'numeric',
@@ -149,36 +151,44 @@ function Review() {
               </div>
 
               {/* Project */}
-              <div className="mb-3">
-                <span className="inline-block bg-gray-100 text-gray-700 px-2 py-1 rounded-lg text-xs font-medium">
+              <div className="mb-3 sm:mb-4">
+                <span className="inline-block bg-gray-100 text-gray-700 px-2 sm:px-3 py-1 rounded-md sm:rounded-lg text-xs sm:text-sm font-medium">
                   {review.project}
                 </span>
               </div>
 
               {/* Review Text */}
-              <p className="text-gray-600 text-sm leading-relaxed">{review.review}</p>
+              <p className="text-gray-600 text-sm sm:text-base leading-relaxed">{review.review}</p>
             </div>
           ))}
         </div>
 
         {/* Stats Section */}
-        <div className="bg-white rounded-xl p-6 shadow-md border border-gray-100">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-            <div>
-              <div className="text-2xl font-bold text-gray-900 mb-1">50+</div>
-              <div className="text-gray-600 text-xs">Happy Clients</div>
+        <div className="bg-white rounded-lg sm:rounded-xl p-4 sm:p-6 lg:p-8 shadow-md border border-gray-100">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 text-center">
+            <div className="py-2 sm:py-4">
+              <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 mb-1 sm:mb-2">
+                50+
+              </div>
+              <div className="text-gray-600 text-xs sm:text-sm lg:text-base">Happy Clients</div>
             </div>
-            <div>
-              <div className="text-2xl font-bold text-gray-900 mb-1">4.9</div>
-              <div className="text-gray-600 text-xs">Average Rating</div>
+            <div className="py-2 sm:py-4">
+              <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 mb-1 sm:mb-2">
+                4.9
+              </div>
+              <div className="text-gray-600 text-xs sm:text-sm lg:text-base">Average Rating</div>
             </div>
-            <div>
-              <div className="text-2xl font-bold text-gray-900 mb-1">100%</div>
-              <div className="text-gray-600 text-xs">Project Success</div>
+            <div className="py-2 sm:py-4">
+              <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 mb-1 sm:mb-2">
+                100%
+              </div>
+              <div className="text-gray-600 text-xs sm:text-sm lg:text-base">Project Success</div>
             </div>
-            <div>
-              <div className="text-2xl font-bold text-gray-900 mb-1">24/7</div>
-              <div className="text-gray-600 text-xs">Support Available</div>
+            <div className="py-2 sm:py-4">
+              <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 mb-1 sm:mb-2">
+                24/7
+              </div>
+              <div className="text-gray-600 text-xs sm:text-sm lg:text-base">Support Available</div>
             </div>
           </div>
         </div>

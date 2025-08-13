@@ -78,9 +78,9 @@ function Admin() {
                 </div>
                 <span className="font-semibold text-gray-900">Freelancer Codex</span>
               </Link>
-              
-              <Link 
-                to="/" 
+
+              <Link
+                to="/"
                 className="text-gray-600 hover:text-gray-900 transition-colors font-medium"
               >
                 Home

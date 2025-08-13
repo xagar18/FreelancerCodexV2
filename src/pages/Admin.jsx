@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import Navbar from '../components/Navbar';
+import { Link } from 'react-router-dom';
 import basinService from '../services/Basin';
 
 function Admin() {
@@ -68,8 +68,28 @@ function Admin() {
   if (!isAuthenticated) {
     return (
       <div className="h-screen overflow-hidden">
-        <Navbar />
-        <div className="h-[calc(100vh-80px)] bg-white flex items-center justify-center px-4">
+        {/* Simple Navbar */}
+        <nav className="bg-white border-b border-gray-200 sticky top-0 z-50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex justify-between items-center h-16">
+              <Link to="/" className="flex items-center space-x-2">
+                <div className="w-8 h-8 bg-black rounded-lg flex items-center justify-center">
+                  <span className="text-white font-bold text-sm">FC</span>
+                </div>
+                <span className="font-semibold text-gray-900">Freelancer Codex</span>
+              </Link>
+              
+              <Link 
+                to="/" 
+                className="text-gray-600 hover:text-gray-900 transition-colors font-medium"
+              >
+                Home
+              </Link>
+            </div>
+          </div>
+        </nav>
+
+        <div className="h-[calc(100vh-64px)] bg-white flex items-center justify-center px-4">
           <div className="w-full max-w-sm">
             <div className="bg-white border border-gray-200 p-6 rounded-lg shadow-sm">
               <div className="flex flex-col items-center mb-6">
@@ -169,12 +189,12 @@ function Admin() {
 
             {/* Right side - Actions */}
             <div className="flex items-center space-x-2 flex-shrink-0">
-              <a
-                href="/"
+              <Link
+                to="/"
                 className="text-white hover:text-gray-300 text-sm font-medium transition-colors underline"
               >
                 Home
-              </a>
+              </Link>
 
               <button
                 onClick={fetchSubmissions}

@@ -1,5 +1,4 @@
 function Contact() {
-  // Get Basin endpoint from environment variable with fallback (VITE uses import.meta.env)
   const basinEndpoint = import.meta.env.VITE_BASIN_ENDPOINT;
 
   return (

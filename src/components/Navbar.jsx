@@ -1,10 +1,14 @@
 import { useEffect, useState } from 'react';
 
 function Navbar() {
+  // State for navbar bg change on scroll
   const [isScrolled, setIsScrolled] = useState(false);
+  // State for mobile menu toggle
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  // Nav items array
   const NavButton = ['Home', 'Works', 'Pricing', 'Reviews', 'Contact'];
 
+  // Listen for scroll events to change navbar appearance
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.scrollY;
@@ -13,12 +17,13 @@ function Navbar() {
 
     window.addEventListener('scroll', handleScroll);
 
-    // Cleanup event listener on component unmount
+    // Cleanup event listener when component unmounts
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
 
+  // Function to smooth scroll to any section & close mobile menu
   const scrollToSection = sectionId => {
     const element = document.getElementById(sectionId.toLowerCase());
     if (element) {
@@ -34,10 +39,12 @@ function Navbar() {
       }`}
     >
       <div className="container mx-auto flex justify-between items-center">
+        {/* Brand logo/name */}
         <h1 className="text-black text-2xl font-bold">Codex</h1>
 
-        {/* Desktop Menu */}
+        {/* Desktop navigation menu */}
         <ul className="hidden md:flex space-x-6 items-center">
+          {/* Map through nav buttons */}
           {NavButton.map((button, index) => (
             <li key={index}>
               <button
@@ -48,6 +55,7 @@ function Navbar() {
               </button>
             </li>
           ))}
+          {/* Special CTA button w/ decorative lines */}
           <li key="book-call" className="relative">
             <button
               onClick={() => scrollToSection('contact')}
@@ -70,7 +78,7 @@ function Navbar() {
           </li>
         </ul>
 
-        {/* Mobile Menu Button */}
+        {/* Mobile hamburger menu button */}
         <button
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           className="md:hidden text-black focus:outline-none"
@@ -86,10 +94,11 @@ function Navbar() {
         </button>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile dropdown menu */}
       {isMobileMenuOpen && (
         <div className="md:hidden mt-4 pb-4">
           <ul className="flex flex-col space-y-3">
+            {/* Mobile nav items */}
             {NavButton.map((button, index) => (
               <li key={index}>
                 <button
@@ -100,6 +109,7 @@ function Navbar() {
                 </button>
               </li>
             ))}
+            {/* Mobile CTA button */}
             <li>
               <button
                 onClick={() => scrollToSection('contact')}

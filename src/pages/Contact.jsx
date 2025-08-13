@@ -1,6 +1,7 @@
 import { useState } from 'react';
 
 function Contact() {
+  // Form state object w/ all input fields
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -10,6 +11,7 @@ function Contact() {
     message: '',
   });
 
+  // Handle input changes - updates state
   const handleChange = e => {
     setFormData({
       ...formData,
@@ -17,6 +19,7 @@ function Contact() {
     });
   };
 
+  // Handle form submission
   const handleSubmit = e => {
     e.preventDefault();
     console.log('Form submitted:', formData);
@@ -27,6 +30,7 @@ function Contact() {
       id="contact"
       className="min-h-[600px] bg-gradient-to-br from-gray-50 via-white to-gray-100 py-6 px-4"
     >
+      {/* Main container w/ responsive max width */}
       <div className="max-w-5xl mx-auto">
         {/* Header */}
         <div className="text-center mb-6 md:mb-8">
@@ -189,7 +193,7 @@ function Contact() {
                 <div>
                   <p className="text-gray-300 text-xs md:text-sm">Email us at</p>
                   <p className="text-white font-semibold text-sm md:text-base break-all">
-                    Freelancercodex1@gmail.com
+                    freelancercodex1@gmail.com
                   </p>
                 </div>
               </div>
@@ -219,7 +223,7 @@ function Contact() {
               <h4 className="text-sm md:text-base font-bold text-gray-900 mb-3">Follow Us</h4>
               <div className="flex space-x-3 justify-center md:justify-start">
                 <a
-                  href="#"
+                  href="https://www.instagram.com/freelancercodex_/"
                   className="group w-10 h-10 bg-gray-100 hover:bg-black rounded-lg flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg"
                   title="Instagram"
                 >

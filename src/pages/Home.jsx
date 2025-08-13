@@ -1,6 +1,7 @@
 import ShowCase from '../components/ShowCase';
 
 function Home() {
+  // Function to scroll to any section smoothly
   const scrollToSection = sectionId => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -10,13 +11,17 @@ function Home() {
 
   return (
     <div id="home">
+      {/* Hero section container */}
       <div className="min-h-[400px] md:h-[500px] w-full flex flex-col justify-center items-center px-4">
         <div className="w-full flex flex-col justify-center items-center">
+          {/* Status badge - "we're available" indicator */}
           <div className="inline-flex items-center gap-2 text-sm font-medium border border-gray-300/50 rounded-full mb-6 md:mb-8 bg-gradient-to-r from-white/80 to-gray-50/80 backdrop-blur-sm shadow-sm hover:shadow-md transition-all duration-300 px-4 py-2">
+            {/* Green pulse dot for "online" status */}
             <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
             <span className="text-gray-700 font-bold">Early-stage? We live for it.</span>
           </div>
 
+          {/* Main hero headline w/ gradient text */}
           <h1 className="text-3xl md:text-5xl font-bold text-center text-gray-900 drop-shadow-xl leading-tight max-w-4xl px-4">
             We build what most won't touch. <br className="hidden md:block" />{' '}
             <span
@@ -29,10 +34,12 @@ function Home() {
               And make it look damn good.{' '}
             </span>
           </h1>
+          {/* Subtitle text */}
           <p className="text-base md:text-lg text-bold text-gray-600 mt-4 max-w-2xl text-center px-4">
             Bold ideas. Beautiful execution.
           </p>
 
+          {/* CTA button w/ hover effects */}
           <div className="mt-8 md:mt-14">
             <button
               onClick={() => scrollToSection('contact')}
@@ -40,6 +47,7 @@ function Home() {
             >
               <span className="relative z-10 flex items-center gap-2">
                 Book a Call
+                {/* Arrow icon w/ hover animation */}
                 <svg
                   className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300"
                   fill="none"
@@ -58,6 +66,7 @@ function Home() {
           </div>
         </div>
       </div>
+      {/* Showcase component */}
       <ShowCase />
     </div>
   );

@@ -1,5 +1,5 @@
 function Review() {
-  // Sample reviews data
+  // Sample client reviews data array
   const reviews = [
     {
       id: 1,
@@ -81,7 +81,7 @@ function Review() {
     },
   ];
 
-  // Render stars
+  // Function to render star ratings dynamically
   const renderStars = rating => {
     return [...Array(5)].map((_, index) => (
       <svg
@@ -101,7 +101,7 @@ function Review() {
       className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-gray-100 py-6 px-3 sm:py-8 sm:px-4 lg:py-12 lg:px-6"
     >
       <div className="max-w-6xl mx-auto">
-        {/* Header Section */}
+        {/* Header section w/ title & subtitle */}
         <div className="text-center mb-6 sm:mb-8 lg:mb-12">
           <h1 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-gray-900 mb-2 sm:mb-3 tracking-tight">
             Client{' '}
@@ -114,8 +114,9 @@ function Review() {
           </p>
         </div>
 
-        {/* Reviews Grid */}
+        {/* Reviews grid - responsive columns */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 lg:gap-6 mb-6 sm:mb-8 lg:mb-12">
+          {/* Map through reviews array */}
           {reviews.map(review => (
             <div
               key={review.id}

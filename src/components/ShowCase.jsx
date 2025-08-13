@@ -1,4 +1,5 @@
 function ShowCase() {
+  // Words for animated text marquee
   const marqueeWords = [
     'Innovate',
     'Elevate',
@@ -16,6 +17,7 @@ function ShowCase() {
 
   return (
     <>
+      {/* Main showcase container w/ dotted bg pattern */}
       <div
         className="md:min-h-[400px] min-h-[750px] md:h-[570px] w-full flex flex-col justify-center items-center backdrop-blur-md overflow-hidden relative px-4"
         style={{
@@ -37,16 +39,19 @@ function ShowCase() {
           backgroundSize: 'cover, cover, 5px 15px',
         }}
       >
-        {/* Mobile Layout */}
+        {/* Mobile layout - stacked cards */}
         <div className="block md:hidden w-full space-y-6">
-          {/* Frontend Magic */}
+          {/* Frontend Magic card */}
           <div className="group relative bg-white/20 backdrop-blur-xl rounded-2xl shadow-2xl border border-white/30 p-4 mx-4">
+            {/* Decorative gradient lines around card */}
             <div className="absolute top-0 left-4 w-0.5 h-full bg-gradient-to-b from-purple-400/70 via-purple-300/50 to-purple-200/30 rounded-full"></div>
             <div className="absolute top-0 right-4 w-0.5 h-full bg-gradient-to-b from-purple-400/70 via-purple-300/50 to-purple-200/30 rounded-full"></div>
             <div className="absolute top-4 left-0 w-full h-0.5 bg-gradient-to-r from-purple-400/70 via-purple-300/50 to-purple-200/30 rounded-full"></div>
             <div className="absolute bottom-4 left-0 w-full h-0.5 bg-gradient-to-r from-purple-400/70 via-purple-300/50 to-purple-200/30 rounded-full"></div>
 
+            {/* Inner card content */}
             <div className="bg-white/60 backdrop-blur-2xl rounded-2xl p-4 shadow-xl border border-white/40">
+              {/* Icon circle */}
               <div className="w-10 h-10 bg-gradient-to-br from-purple-500 to-purple-700 rounded-full flex items-center justify-center mb-4 shadow-lg">
                 <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
                   <path d="M13 6a3 3 0 11-6 0 3 3 0 616 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3z" />

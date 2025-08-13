@@ -1,10 +1,11 @@
 import { useState } from 'react';
 
 function Pricing() {
-  const [basicCardMode, setBasicCardMode] = useState('standard'); // Individual basic card toggle
-  const [premiumCardMode, setPremiumCardMode] = useState('standard'); // Individual premium card toggle
+  // Individual card mode toggles (standard vs priority)
+  const [basicCardMode, setBasicCardMode] = useState('standard'); // Basic card toggle
+  const [premiumCardMode, setPremiumCardMode] = useState('standard'); // Premium card toggle
 
-  // Pricing data structure
+  // Complete pricing data structure w/ all plans & features
   const pricingData = {
     standard: {
       basicPlan: {
@@ -94,7 +95,7 @@ function Pricing() {
     },
   };
 
-  // Handle individual card toggles
+  // Toggle functions for individual card modes
   const handleBasicToggle = mode => {
     setBasicCardMode(mode);
   };
@@ -103,10 +104,11 @@ function Pricing() {
     setPremiumCardMode(mode);
   };
 
-  // Get current data for each card
+  // Get current pricing data based on selected modes
   const basicCurrentData = pricingData[basicCardMode];
   const premiumCurrentData = pricingData[premiumCardMode];
 
+  // Smooth scroll to any section function
   const scrollToSection = sectionId => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -117,7 +119,7 @@ function Pricing() {
   return (
     <div id="pricing" className="min-h-screen bg-white py-8 px-3 sm:py-12 sm:px-4 lg:py-16">
       <div className="max-w-7xl mx-auto">
-        {/* Header Section */}
+        {/* Header section w/ title & description */}
         <div className="text-center mb-8 sm:mb-12 lg:mb-16">
           <div className="mb-4 sm:mb-6">
             <h1 className="text-2xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-2 sm:mb-4">
@@ -129,7 +131,7 @@ function Pricing() {
             </p>
           </div>
 
-          {/* Price highlight banner */}
+          {/* Price highlight banner - shows starting price */}
           <div className="inline-block bg-gradient-to-r from-green-100 to-blue-100 rounded-full px-4 sm:px-6 py-2 sm:py-3 mb-4 sm:mb-6">
             <span className="text-sm sm:text-base font-semibold text-gray-800">
               🎉 Starting from just <span className="text-green-600 font-bold">$299</span> - Limited

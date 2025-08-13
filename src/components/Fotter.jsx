@@ -19,7 +19,8 @@ function Fotter() {
               Freelancer <span className="text-gray-600">Codex</span>
             </h2>
             <p className="text-gray-600 text-sm">
-              We create digital experiences that transform businesses.
+              We create digital experiences that transform businesses. <br />
+              From web development to mobile apps, we bring your ideas to life with precision and style.
             </p>
           </div>
 

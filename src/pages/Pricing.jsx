@@ -364,7 +364,7 @@ function Pricing() {
             </p>
             <div className="flex flex-col sm:flex-row justify-center items-center gap-2 sm:gap-3 lg:gap-4">
               <button
-                onClick={() => scrollToSection('contact')}
+                onClick={() => window.open('https://cal.com/freelancercodex/30min', '_blank')}
                 className="px-3 sm:px-4 lg:px-6 py-2 sm:py-2.5 lg:py-3 border-2 border-gray-800 text-gray-800 bg-white hover:bg-gray-800 hover:text-white rounded-lg sm:rounded-xl font-semibold transition-all duration-300 text-xs sm:text-sm lg:text-base"
               >
                 Schedule a Call

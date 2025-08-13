@@ -192,7 +192,7 @@ function Contact() {
                 </div>
                 <div>
                   <p className="text-gray-300 text-xs md:text-sm">Email us at</p>
-                  <p className="text-white font-semibold text-sm md:text-base break-all">
+                  <p className="text-white font-medium text-xs md:text-[14px] break-all">
                     freelancercodex1@gmail.com
                   </p>
                 </div>

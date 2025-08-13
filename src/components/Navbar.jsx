@@ -58,7 +58,7 @@ function Navbar() {
           {/* Special CTA button w/ decorative lines */}
           <li key="book-call" className="relative">
             <button
-              onClick={() => scrollToSection('contact')}
+              onClick={() => window.open('https://cal.com/freelancercodex/30min', '_blank')}
               className="relative bg-purple-600 hover:bg-purple-700 text-white font-medium rounded-lg px-5 py-2 transition-colors duration-200"
             >
               {/* Top line extending upward */}
@@ -102,8 +102,8 @@ function Navbar() {
             {NavButton.map((button, index) => (
               <li key={index}>
                 <button
-                  onClick={() => scrollToSection(button)}
                   className="text-black hover:text-purple-600 transition-colors duration-200 w-full text-left"
+                  onClick={() => window.open('https://cal.com/freelancercodex/30min', '_blank')}
                 >
                   {button}
                 </button>
@@ -112,7 +112,7 @@ function Navbar() {
             {/* Mobile CTA button */}
             <li>
               <button
-                onClick={() => scrollToSection('contact')}
+                onClick={() => window.open('https://cal.com/freelancercodex/30min', '_blank')}
                 className="bg-purple-600 hover:bg-purple-700 text-white font-medium rounded-lg px-5 py-2 transition-colors duration-200 w-full"
               >
                 Book a Call

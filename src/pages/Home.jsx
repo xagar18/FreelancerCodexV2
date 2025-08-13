@@ -42,8 +42,8 @@ function Home() {
           {/* CTA button w/ hover effects */}
           <div className="mt-8 md:mt-14">
             <button
-              onClick={() => scrollToSection('contact')}
               className="group relative overflow-hidden bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white font-medium rounded-full px-6 py-3 shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 ease-out"
+              onClick={() => window.open('https://cal.com/freelancercodex/30min', '_blank')}
             >
               <span className="relative z-10 flex items-center gap-2">
                 Book a Call

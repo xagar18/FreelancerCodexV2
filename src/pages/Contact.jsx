@@ -1,29 +1,6 @@
-import { useState } from 'react';
-
 function Contact() {
-  // Form state object w/ all input fields
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    company: '',
-    project: '',
-    budget: '',
-    message: '',
-  });
-
-  // Handle input changes - updates state
-  const handleChange = e => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-  };
-
-  // Handle form submission
-  const handleSubmit = e => {
-    e.preventDefault();
-    console.log('Form submitted:', formData);
-  };
+  // Get Basin endpoint from environment variable with fallback (VITE uses import.meta.env)
+  const basinEndpoint = import.meta.env.VITE_BASIN_ENDPOINT;
 
   return (
     <div
@@ -50,7 +27,11 @@ function Contact() {
           <div className="lg:col-span-2 bg-white rounded-xl shadow-lg border border-gray-100 p-4 md:p-6">
             <h2 className="text-base md:text-lg font-bold text-gray-900 mb-4">Send Message</h2>
 
-            <form onSubmit={handleSubmit} className="space-y-3 md:space-y-4">
+            {/* HTML form using environment variable */}
+            <form action={basinEndpoint} method="POST" className="space-y-3 md:space-y-4">
+              {/* Honeypot field for spam protection */}
+              <input type="hidden" name="_gotcha" style={{ display: 'none' }} />
+
               {/* Name & Email Row */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div>
@@ -60,8 +41,6 @@ function Contact() {
                   <input
                     type="text"
                     name="name"
-                    value={formData.name}
-                    onChange={handleChange}
                     required
                     className="w-full px-3 py-2 text-sm md:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-500 focus:border-gray-500 transition-all duration-300"
                     placeholder="Your name"
@@ -74,8 +53,6 @@ function Contact() {
                   <input
                     type="email"
                     name="email"
-                    value={formData.email}
-                    onChange={handleChange}
                     required
                     className="w-full px-3 py-2 text-sm md:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-500 focus:border-gray-500 transition-all duration-300"
                     placeholder="your@email.com"
@@ -92,8 +69,6 @@ function Contact() {
                   <input
                     type="text"
                     name="company"
-                    value={formData.company}
-                    onChange={handleChange}
                     className="w-full px-3 py-2 text-sm md:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-500 focus:border-gray-500 transition-all duration-300"
                     placeholder="Company name"
                   />
@@ -105,8 +80,6 @@ function Contact() {
                   <input
                     type="text"
                     name="project"
-                    value={formData.project}
-                    onChange={handleChange}
                     className="w-full px-3 py-2 text-sm md:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-500 focus:border-gray-500 transition-all duration-300"
                     placeholder="e.g. Web Development, Mobile App"
                   />
@@ -121,8 +94,6 @@ function Contact() {
                 <input
                   type="text"
                   name="budget"
-                  value={formData.budget}
-                  onChange={handleChange}
                   className="w-full px-3 py-2 text-sm md:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-500 focus:border-gray-500 transition-all duration-300"
                   placeholder="e.g. $5,000 - $10,000"
                 />
@@ -135,8 +106,6 @@ function Contact() {
                 </label>
                 <textarea
                   name="message"
-                  value={formData.message}
-                  onChange={handleChange}
                   required
                   rows="3"
                   className="w-full px-3 py-2 text-sm md:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-500 focus:border-gray-500 transition-all duration-300 resize-none"

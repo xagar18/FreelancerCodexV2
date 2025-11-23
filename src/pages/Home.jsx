@@ -1,14 +1,6 @@
 import ShowCase from '../components/ShowCase';
 
 function Home() {
-  // Function to scroll to any section smoothly
-  const scrollToSection = sectionId => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   return (
     <div id="home">
       {/* Hero section container */}

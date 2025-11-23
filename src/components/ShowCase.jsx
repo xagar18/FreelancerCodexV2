@@ -1,20 +1,4 @@
 function ShowCase() {
-  // Words for animated text marquee
-  const marqueeWords = [
-    'Innovate',
-    'Elevate',
-    'Deploy',
-    'Scale',
-    'Code',
-    'Create',
-    'Design',
-    'Optimize',
-    'Debug',
-    'Render',
-    'Integrate',
-    'Launch',
-  ];
-
   return (
     <>
       {/* Main showcase container w/ dotted bg pattern */}

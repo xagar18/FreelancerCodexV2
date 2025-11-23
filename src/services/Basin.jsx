@@ -125,10 +125,6 @@ class BasinService {
   formatSubmissionForEmail(submission) {
     const name = this.getFieldValue(submission, 'name');
     const email = this.getFieldValue(submission, 'email');
-    const company = this.getFieldValue(submission, 'company');
-    const project = this.getFieldValue(submission, 'project');
-    const budget = this.getFieldValue(submission, 'budget');
-    const message = this.getFieldValue(submission, 'message');
 
     return {
       subject: 'Re: Your Project Inquiry',
